@@ -1,0 +1,260 @@
+:root{
+--Dark-Blue: hsl(246, 80%, 60%);
+
+--Light-red : hsl(15, 100%, 70%);
+--Softblue: hsl(195, 74%, 62%);
+--Lightred: hsl(348, 100%, 68%);
+--Lime-green: hsl(145, 58%, 55%);
+--Violet: hsl(264, 64%, 52%);
+--Soft-orange: hsl(43, 84%, 65%);
+
+--Very-darkblue: hsl(226, 43%, 10%);
+--Darkblue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+
+--font-def: 18px;
+--padding-def: 2rem;
+
+--bigborder-radius: 20px;
+--contborder-radius: 15px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,picture,video,canvas,svg {
+    display: inherit;
+    max-width: 100%;
+}
+
+input,button,textarea,select {
+    font: inherit;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    overflow-wrap: break-word;
+}
+
+h1,h2,h3 {
+    line-height: 1;
+}
+
+h1{
+    font-size: clamp(1rem, 2rem, 2.5rem);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--Very-darkblue);
+    color: white;
+    font-size: var(--font-def);
+}
+
+.currentbody{
+    display: grid;
+    padding-block: 4rem;
+    width: min(80%, 70em);
+    margin-inline: auto;
+    gap: 2rem;
+}
+
+.maincontainer{
+    width: 100%;
+}
+
+.lower{
+    display: flex;
+    justify-content: space-between;
+    text-align-last: start;
+    padding-block: 1rem;
+    gap: 1rem;
+    padding-inline: 2rem;
+}
+
+.containerimgs{
+    padding-block: 4rem 0;
+    border-radius: var(--bigborder-radius);
+    background-repeat: no-repeat;
+    background-position: top right 5%;
+}
+
+.work{
+    background-image: url("images/icon-work.svg");
+    background-color: var(--Light-red);
+}
+
+.play{
+    background-image: url("images/icon-play.svg");
+    background-color: var(--Softblue);
+}
+
+.study{
+    background-image: url("images/icon-study.svg");
+    background-color: var(--Lightred);
+}
+
+.exercise{
+    background-image: url("images/icon-exercise.svg");
+    background-color: var(--Lime-green);
+}
+
+.social{
+    background-image: url("images/icon-social.svg");
+    background-color: var(--Violet);
+}
+
+.selfcare{
+    background-image: url("images/icon-selfcare.svg");
+    background-color: var(--Soft-orange);
+}
+
+.containerinfo{
+    background-color: var(--Darkblue);
+    padding: 2rem;
+    border-radius: var(--contborder-radius);
+}
+
+
+.mainpart{
+    background-color: var(--Darkblue);
+    border-radius: var(--contborder-radius);
+}
+
+.toppart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.upper{
+    background-color: var(--Dark-Blue);
+    padding-inline: var(--padding-def);
+    padding-block: var(--padding-def) 4.5rem;
+    border-radius: var(--contborder-radius);
+}
+
+.report{
+    font-size: 14px;
+    color: var(--Desaturated-blue);
+}
+
+.propertys{
+    padding-block: 2.5rem;
+}
+
+.name{
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.upper > img{
+    width: 5rem;
+    border-radius: 100%;
+    border: 3px solid white;
+}
+
+.btn, .lower-btn{
+    background-color: transparent;
+    border: none;
+    color: var(--Desaturated-blue);
+    font-size: var(--font-def);
+    padding: 0;
+    cursor: pointer;
+}
+
+.lower-btn:hover{
+    color: white;
+}
+
+.titles{
+    font-weight: 500;
+}
+
+.activehours{
+    font-size: var(--font-def);
+    font-weight: 300;
+}
+
+.previoushours{
+    font-size: 14px;
+    color: var(--Pale-Blue);
+}
+
+.activebutton{
+    color: white;
+}
+
+@media(max-width: 700px){
+    
+    .upper{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-block: 0;
+    }
+
+    .upper > img{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .name{
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .lowerpart{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .activehours{
+        font-size: 30px;
+        font-weight: 300;
+    }
+}
+
+@media (min-width: 700px){
+
+    .currentbody{
+        grid-template-columns: repeat(4, 1fr);
+        place-content: center;
+    }
+
+    .mainpart{
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .lower{
+        display: grid;
+    }
+
+    .activehours{
+        font-size: 45px;
+        font-weight: 300;
+    }
+}
